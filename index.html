@@ -11,23 +11,18 @@
   <button onclick="playerPlay()">Play</button>
 
   <script>
-    // Your JavaScript goes here!
-const ROCK = "rock"
-const PAPER = "paper"
-const SCISSOR = "scissor"
-
 function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max-min +1) + min);
 }
-let randomNumber = getRandomInt(1,3);
+let computerSelection = getRandomInt(1,3);
 
 function computerPlay(computerSelection) {
-  if (randomNumber === 1) {
-    return computerSelection = ROCK;
-  } else if (randomNumber === 2) {
-    return computerSelection = PAPER;
+  if (computerSelection === 1) {
+    return "rock";
+  } else if (computerSelection === 2) {
+    return "paper";
   } else {
-    return computerSelection = SCISSOR;
+    return "scissor";
   }
 return computerSelection;
 }
@@ -38,24 +33,26 @@ function playerPlay(playerSelection) {
 }
 
 function playRound(computerPlay, playerPlay) {
-let outcome = "What happened"
-  if (computerPlay === ROCK && playerPlay === SCISSOR) {
+  if (computerPlay === playerPlay) {
+    if (computerPlay === "rock" && playerPlay === "scissor") {
+    return outcome = "lost"; 
+    }else if (computerPlay === "paper" && playerPlay === "rock") {
     return outcome = "lost";
-  } else if (computerPlay === PAPER && playerPlay === ROCK) {
-    return outcome = "lost";
-  } else if (computerPlay === SCISSOR && playerPlay === PAPER) {
-    return outcome = "lost";
-  } else if (computerPlay === ROCK && playerPlay === PAPER) {
+    } else if (computerPlay === "scissor" && playerPlay === "paper") {
+    return outcome = "lost";  
+    } else if (computerPlay === "rock" && playerPlay === "paper") {
     return outcome = "won";
-  } else if (computerPlay === PAPER && playerPlay === SCISSOR) {
+    } else if (computerPlay === "paper" && playerPlay === "scissor") {
     return outcome = "won";
-  }else if (computerPlay === SCISSOR && playerPlay === ROCK) {
+    } else if (computerPlay === "scissor" && playerPlay === "rock") {
     return outcome = "won";
+    }  
   } else {
-    return outcome = "tied"
+  return outcome ="tied";
   }
-  return results = "You have " + outcome + " your oppent choose " + computerPlay + " and you choose " + playerPlay;
 }
+
+
   </script>
 </body>
 </html>
