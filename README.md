@@ -1,37 +1,34 @@
 Rock Paper Scissors
 
 Understanding the problem:
-To create a game of rock, paper, scissors in javascript in an html document.
+Give the previously created javascript console game of rock, paper, scissors a simple UI
 
 Planning:
-Made in script in an html document
-Played from the console
-Computer player is competitor
--Function called computerPlay that will randomly return rock, paper, or scissors
-Single Round
--function takes two parameters - playerSelection and computerSelection
--returns a string that declares the winner and how
-Function will return values and you will access it with console.log
-Add another function called game() with the previous functions inside it
--have it play 5 rounds that keeps score and reports a winner and loser at the end
--don't have to use loops - just call your function playRound 5 times
--use console.log to display results of each round and information at the end
-Use prompt() to get input from user
+-Go back to your “Rock Paper Scissors” game from a previous lesson and give it a simple UI so that the player can play the game by clicking on buttons rather than typing their answer in a prompt.
+-Copy your original code into a new file so you don’t lose it.
+-For now, remove the logic that plays exactly five rounds.
+-Create three buttons, one for each selection. Add an event listener to the buttons that calls your playRound function with the correct playerSelection every time a button is clicked. (you can keep the console.logs for this step)
+-Add a div for displaying results and change all of your console.logs into DOM methods.
+-Display the running score, and announce a winner of the game once one player reaches 5 points.
+-You will likely have to refactor (rework/rewrite) your original code to make it work for this. That’s OK! Reworking old code is an important part of the programmer’s life.
+-Don’t forget to go back and add your new version to the original Rock Paper Scissors Project!
+
 
 Pseudo Code:
-Create random variable for computerPlay: 
-Create user input using prompt()
-Compare two arguments
--Rock beats Scissor
--Scissor beats Paper
--Paper beats Rock
-Return winner
--
-Then console.log winner
-Return a counter
-console.log counter
-Rerun first function
-Repeat for a total of 5 round
+-Create a simple UI
+    -Create 3 buttons
+    -Create a score board
+        -Player Score
+        -Computer Score
+        -Text box 
+-Instead of pushing text into the console. Show scores and information in the website.
+    -Count who wins 
+    -Display text for each round
+-Event listner for each click
+-Return event to number and string
+-Place numbers in scoreboard
+-Place string in box
+    -event clicks change css to display information
+  
 
 Outcome:
-Ran into some issues with the console.log and defining the variables to return the information I was looking for. I didn't think it was working so piece by piece I made sure it was returning values. Started to understand functions a lot during that process. I got to a place where everything was returning variables so the console.log should be returning the correct results and that is when things clicked. Everything became super easy and I got it on a role quickly after that. The next part was understanding the loop but once I talked it over with my wife that was real easy!

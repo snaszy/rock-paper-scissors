@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rock, Paper, Scissor Game</title>
+  <meta charset="UTF-8"/>
+</head>
+<body>
+  <h1>Rock, Paper, Scissors</h1>
+  <p>Play 5 rounds using your console to see what is happening.</p>
+  <button id="btn" onclick="game()">Start Game</button>
+  <script>
+
+//Create a random variable for the computer
+function computerPlay() {
+  let randomNumber = Math.floor(Math.random() * 3);
+    if (randomNumber < 1) {
+    return "rock";
+  } else if (randomNumber < 2) {
+    return "paper";
+  } else if (randomNumber < 3) {
+    return "scissor";
+  } else {
+    return "error";
+  }
+};
+//Comparing the two arguments to see who won the round and tracking player score
+function playRound(computerSelection, playerSelection) {
+  if (computerSelection === playerSelection) {
+  return `You both chose ${playerSelection}, it is a tie`;
+  } else if (computerSelection === "rock" && playerSelection === "scissor") {
+  return `You lost! Rock breaks scissor!`; 
+  } else if (computerSelection === "paper" && playerSelection === "rock") {
+  return `You lost! Paper covers rock!`;
+  } else if (computerSelection === "scissor" && playerSelection === "paper") {
+  return `You lost! Scissor cuts paper!`;  
+  } else if (computerSelection === "rock" && playerSelection === "paper") {
+    playerScore++;
+  return `You won! Paper covers rock!`;
+  } else if (computerSelection === "paper" && playerSelection === "scissor") {
+    playerScore++;
+  return `You won! Scissor cuts paper!`;
+  } else if (computerSelection === "scissor" && playerSelection === "rock") {
+    playerScore++;
+  return `You won! Rock breaks scissor!`; 
+  } else {
+  return "You didn't choose a correct option";
+  }
+};
+//Playerscore to decide who wins at the end
+let playerScore = 0;
+//Loop for the game for 5 rounds
+function game(i) {
+  for (let i = 0; i < 5; i++) {
+    let computerSelection = computerPlay();
+    let playerSelection = window.prompt("Choose Rock, Paper, or Scissor", "Rock").toLowerCase();
+    playRound(computerSelection, playerSelection);
+    console.log(playRound(computerSelection, playerSelection));
+    }
+  if (playerScore >= 3) {
+    console.log("Game over, you won!");
+
+  } else {
+    console.log("Game over, you lost!");
+  }
+};
+
+
+//I still need an if statement to prevent the listener from erroring out. 
+
+</script>
+</body>
+</html>
