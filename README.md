@@ -14,7 +14,7 @@ Planning:
 -Don’t forget to go back and add your new version to the original Rock Paper Scissors Project!
 
 
-Pseudo Code:
+Outline:
 -Create a simple UI
     -Create 3 buttons
     -Create a score board
@@ -24,11 +24,14 @@ Pseudo Code:
 -Instead of pushing text into the console. Show scores and information in the website.
     -Count who wins 
     -Display text for each round
--Event listner for each click
+-Event listener for each click
 -Return event to number and string
 -Place numbers in scoreboard
 -Place string in box
     -event clicks change css to display information
   
+Pseudo Code:
+
+
 
 Outcome:
