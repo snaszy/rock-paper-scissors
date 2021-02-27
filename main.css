@@ -1,0 +1,42 @@
+body {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+}
+#results {
+    display: grid; 
+    grid-template-columns: 20vw 10vw 40vw 10vw 20vw;
+    grid-template-rows: 10px 100px;
+    background: white;
+    margin: 20px;
+}
+#playerName {
+    grid-column: 2/3;
+}
+#playerScoreboard, #playUpdates, #computerScoreboard {
+    background-color: white;
+    text-align: center; 
+    align-self: center;
+}
+#playerScoreboard {
+    font-size: 5vw;
+    grid-column: 2/3;
+}
+#playUpdates {
+    font-size: 2vw;
+}
+#computerScoreboard {
+    font-size: 5vw;
+}
+button {
+    color: white;
+    background-color: red;
+    height:75px;
+    width: 75px;
+    border-radius: 50%;
+    box-shadow: 5px 5px 10px 1px black;
+    margin: 10px;
+}
+:focus {
+    outline: none;
+
+}

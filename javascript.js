@@ -25,12 +25,17 @@
     displayComputerScore.textContent = computerScore;
     displayRoundUpdates.textContent = roundResults;
     }
-    else if (playerScore === 5) { 
-      displayRoundUpdates.textContent = "Congratulations. You won 5 rounds"; 
-    } else {
-      displayRoundUpdates.textContent = "Oh no, you computer beat you in 5 rounds";
-    }
+    checkWinner();
   };
+
+  //Check for winner to display final results(prevents click one last time to show results)
+  function checkWinner() {
+    if (playerScore === 5) { 
+      displayRoundUpdates.textContent = "Congratulations. You won 5 rounds"; 
+    } else if (computerScore === 5) {
+      displayRoundUpdates.textContent = "Oh no, the computer beat you in 5 rounds";
+    }
+  }
 
   //Create a random variable for the computer
   function computerPlay() {
@@ -49,7 +54,7 @@
   //Comparing the two arguments to see who won the round and tracking player score
   function playRound() {
     if (computerSelection === playerSelection) {
-    return `You both choose ${playerSelection}, it is a tie`;
+    return roundResults = `You both choose ${playerSelection}, it is a tie`;
     } else if (computerSelection === "rock" && playerSelection === "scissor") {
       computerScore++;
       return roundResults = `You lost! Rock breaks scissor!`; 
