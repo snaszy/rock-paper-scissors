@@ -1,13 +1,49 @@
+html {
+    background-color: white;
+}
 body {
+    margin: 20px;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-align: center;
+    border: solid 1px black;
+    border-radius: 25px;
+    background-image: linear-gradient(rgb(170, 170, 170), rgb(99, 99, 99))
 }
+
+h1 {
+    background-color: white;
+    border:solid 1px black;
+    margin: 1em 1em 0em 1em;
+    padding: 1em;
+}
+
+body p {
+    color: white;
+    margin: 0em 2em;
+    padding-top:2em;
+}
+
+
+#selections {
+    padding: 1em 0em;
+}
+
+[data='hidden'] {
+    display:none;
+}
+
+[data='visible'] {
+    display:inline-block;
+}
+
 #results {
+    padding: 2em 1em 0em 1em;
     display: grid; 
-    grid-template-columns: 20vw 10vw 40vw 10vw 20vw;
+    grid-template-columns: 10vw 10vw 50vw 10vw 10vw;
     grid-template-rows: 10px 100px;
     background: white;
     margin: 20px;
+    border: solid 1px black;
 }
 #playerName {
     grid-column: 2/3;
@@ -28,13 +64,14 @@ body {
     font-size: 5vw;
 }
 button {
-    color: white;
-    background-color: red;
+    font-weight:900;
+    color: black;
+    background-image: linear-gradient(red,orange);
     height:75px;
     width: 75px;
     border-radius: 50%;
     box-shadow: 5px 5px 10px 1px black;
-    margin: 10px;
+    margin: 10px 5vw;
 }
 :focus {
     outline: none;

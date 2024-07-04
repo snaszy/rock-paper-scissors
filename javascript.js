@@ -21,19 +21,50 @@
     playerSelection = (e.target.id);
     computerPlay();
     playRound();
-    displayPlayerScore.textContent = playerScore;
-    displayComputerScore.textContent = computerScore;
-    displayRoundUpdates.textContent = roundResults;
+    displayInformation();
     }
     checkWinner();
   };
+
+  //Update DOM to show data
+  function displayInformation () {
+    displayPlayerScore.textContent = playerScore;
+    displayComputerScore.textContent = computerScore;
+    displayRoundUpdates.textContent = roundResults;
+  }
+
+  //Reset values on the score board
+  function resetScoreboard () {
+    playerScore = 0;
+    computerScore = 0;
+    roundResults = "Round 1 - FIGHT!";
+    displayInformation();
+  }
+
+  //Show the buttons after reset
+  function showButtons () {
+    buttonSelect.forEach(button => button.setAttribute('data', 'visible'));
+    let resetButton = document.getElementById('reset');
+    resetButton.setAttribute('data','hidden');
+    resetScoreboard();
+  }
+
+  //Clear buttons and replace with a reset button
+  function clearButtons() {
+    buttonSelect.forEach(button => button.setAttribute('data', 'hidden'));
+    let resetButton = document.getElementById('reset');
+    resetButton.setAttribute('data','visible');
+    resetButton.addEventListener('click', showButtons);
+  }
 
   //Check for winner to display final results(prevents click one last time to show results)
   function checkWinner() {
     if (playerScore === 5) { 
       displayRoundUpdates.textContent = "Congratulations. You won 5 rounds"; 
+      clearButtons();
     } else if (computerScore === 5) {
       displayRoundUpdates.textContent = "Oh no, the computer beat you in 5 rounds";
+      clearButtons();
     }
   }
 
